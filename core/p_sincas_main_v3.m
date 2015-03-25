@@ -3,6 +3,8 @@
 % Authors: Oleg Kravchenko, Dmitry Churikov
 % Date: 19/03/15
 % UPD1: 23/03/15 - nice
+% UPD2: 25/03/15 - ole
+	% use another function
 
 close all;
 clear all;
@@ -23,8 +25,13 @@ y = abs(x)*(atan(x/50))*(10); % Манипуляция аргумента
 yinv = 100*tan(y/10); % y -> x
 
 % f = @(x)(exp(-y.*x.^2/10).*cos(y.*x));
-f0 = (exp(-(  x)^2/10)*cos(  x));
-f  = (exp(-(  y)^2/10)*cos(  y));
+% f0 = (exp(-(  x)^2/10)*cos(  x));
+% f  = (exp(-(  y)^2/10)*cos(  y));
+
+% use another function
+f0 = (exp(-(  x)^2/10)*cos(10*x));
+f  = (exp(-(  y)^2/10)*cos(10*y));
+
 % f  = (exp(-(y*x)^2/10)*cos(y*x));
 
 f = eval(f);
